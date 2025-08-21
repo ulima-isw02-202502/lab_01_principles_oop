@@ -306,7 +306,6 @@ public abstract class VehiculoElectrico extends Vehiculo {
 ```
 
 ```java
-package com.laboratorio.repaso;
 
 public class Tesla extends VehiculoElectrico {
     private boolean autopilot;
@@ -325,7 +324,6 @@ public class Tesla extends VehiculoElectrico {
 ## Ejercicio 4: Polimorfismo
 
 ```java
-package com.laboratorio.repaso;
 
 import java.util.ArrayList;
 import java.util.List;
