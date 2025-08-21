@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 Caso de Estudio: Sistema de Gestión Vehicular
+## Caso de Estudio: Sistema de Gestión Vehicular
 
 Una empresa de alquiler de vehículos necesita un sistema para gestionar su flota. La flota incluye autos tradicionales, motocicletas y vehículos eléctricos (específicamente Teslas). Cada tipo de vehículo tiene características y comportamientos únicos, pero todos comparten propiedades básicas como marca, modelo, año y precio.
 
@@ -23,7 +23,7 @@ Una empresa de alquiler de vehículos necesita un sistema para gestionar su flot
 
 ---
 
-## 📊 Diagrama de Clases
+## Diagrama de Clases
 
 ```mermaid
 classDiagram
@@ -77,7 +77,6 @@ classDiagram
 
     class GestionVehiculos {
         +main(String[] args) void
-        +demonstrarCasting(List~Vehiculo~) void
     }
 
     Vehiculo <|-- Auto
@@ -330,45 +329,10 @@ import java.util.List;
 
 public class GestionVehiculos {
     public static void main(String[] args) {
-        // Crear lista polimórfica
-        List<Vehiculo> vehiculos = new ArrayList<>();
-
-        // Agregar diferentes tipos de vehículos
-        vehiculos.add(new Auto("Toyota", "Corolla", 2023, 25000, 4, "Automática"));
-        vehiculos.add(new Motocicleta("Honda", "CBR600", 2022, 12000, 600, false));
-        vehiculos.add(new Tesla("Model 3", 2023, 45000, 75, 500, true));
-
-        // Polimorfismo en acción
-        System.out.println("=== INFORMACIÓN DE VEHÍCULOS ===");
-        for (Vehiculo v : vehiculos) {
-            v.mostrarInfo(); // Cada objeto ejecuta su propia versión
-            v.encender();
-            System.out.println("Precio: $" + v.getPrecio());
-            System.out.println("-------------------");
-        }
-
-        // Demostrar casting y instanceof
-        demonstrarCasting(vehiculos);
-    }
-
-    private static void demonstrarCasting(List<Vehiculo> vehiculos) {
-        System.out.println("\n=== FUNCIONALIDADES ESPECÍFICAS ===");
-        for (Vehiculo v : vehiculos) {
-            if (v instanceof Auto) {
-                Auto auto = (Auto) v;
-                auto.activarAireAcondicionado();
-            } else if (v instanceof Motocicleta) {
-                Motocicleta moto = (Motocicleta) v;
-                moto.hacerCaballito();
-            } else if (v instanceof Tesla) {
-                Tesla tesla = (Tesla) v;
-                tesla.activarAutopilot();
-                tesla.modoEcoActivar();
-                System.out.println("Eficiencia: " + tesla.calcularEficiencia() + " km/kWh");
-            }
-        }
+        // TODO: Crear una lista en la que agregues distintos vehiculos y luego itera sobre cada uno para llamar al métoodo común mostrarInfo() y encender()
     }
 }
+
 ```
 
 ---
@@ -379,4 +343,3 @@ public class GestionVehiculos {
 - **Herencia:** `extends`, `super`, sobrescritura de métodos
 - **Clases Abstractas:** Métodos abstractos y concretos
 - **Polimorfismo:** Mismo método, diferentes implementaciones
-- **Casting:** `instanceof` y conversión de tipos
